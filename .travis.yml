@@ -3,7 +3,11 @@ rvm:
 - 2.3.3
 
 script:
-  - set -e # halt script on error
+  - #set -e # halt script on error
+  - cat /etc/os-release
+  - curl --version
+  - curl --verbose https://img.shields.io/badge/Encoding-UTF--8-blue.svg
+  - date
   - bundle exec jekyll build
   - bundle exec htmlproofer ./_site
 
