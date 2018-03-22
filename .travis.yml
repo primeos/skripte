@@ -4,10 +4,11 @@ rvm:
 addons:
   apt:
     packages:
-    - libcurl4-openssl-dev # required to avoid SSL errors
+    - libcurl4-openssl-dev # Required to avoid TLS errors
 
 script:
   - #set -e # halt script on error
+  - echo "New version"
   - uname -a
   - cat /etc/os-release
   - curl --version
