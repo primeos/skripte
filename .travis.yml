@@ -1,9 +1,19 @@
 language: ruby
 rvm:
 - 2.3.3
+addons:
+  apt:
+    packages:
+    - libcurl4-openssl-dev # Required to avoid TLS errors
 
 script:
-  - set -e # halt script on error
+  - #set -e # halt script on error
+  - echo "New version"
+  - uname -a
+  - cat /etc/os-release
+  - curl --version
+  - curl --verbose https://img.shields.io/badge/Encoding-UTF--8-blue.svg
+  - date
   - bundle exec jekyll build
   - bundle exec htmlproofer ./_site
 
