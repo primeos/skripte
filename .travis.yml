@@ -11,7 +11,7 @@ script:
   - dpkg -l | grep curl
   - bundle exec jekyll build
   - strace -f bundle exec htmlproofer ./_site
-  - apt-get install --quiet --yes libcurl4-openssl-dev
+  - sudo apt-get install --quiet --yes libcurl4-openssl-dev
   - strace -f bundle exec htmlproofer ./_site
   - bundle exec htmlproofer ./_site
 
