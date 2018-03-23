@@ -3,7 +3,12 @@ rvm:
 - 2.3.3
 
 script:
-  - set -e # halt script on error
+  - #set -e # halt script on error
+  - uname -a
+  - cat /etc/os-release
+  - curl --version
+  - ldd $(which curl)
+  - dpkg -l | grep curl
   - bundle exec jekyll build
   - bundle exec htmlproofer ./_site
 
